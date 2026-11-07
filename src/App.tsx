@@ -34,6 +34,7 @@ import { ActiveVoicesHUD } from './components/ActiveVoicesHUD';
 import { RoomCalibrationModal } from './components/RoomCalibrationModal';
 import { RecordingsList } from './components/RecordingsList';
 import { PWAInstallBanner } from './components/PWAInstallBanner';
+import { OfflineIndicator } from './components/OfflineIndicator';
 import { convertBlobToWav, encodeWAV } from './utils/wavEncoder';
 import { 
   getAllRecordings, 
@@ -645,6 +646,9 @@ export default function App() {
         onCalibrate={handleRunCalibration}
         onCalibrationComplete={handleCalibrationComplete}
       />
+
+      {/* Offline Status Indicator */}
+      <OfflineIndicator />
     </div>
   );
 }
