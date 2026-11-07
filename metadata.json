@@ -1,0 +1,6 @@
+{
+  "name": "ClearVoice Recorder",
+  "description": "Professional noise-canceling voice recorder with real-time room calibration, 4-speaker proximity gating, and crystal clear studio audio.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
