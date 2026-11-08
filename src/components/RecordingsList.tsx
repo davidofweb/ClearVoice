@@ -203,28 +203,17 @@ export const RecordingsList: React.FC<RecordingsListProps> = ({
         />
       )}
 
-      <div className="flex items-center justify-between px-1">
-        <h3 className="text-base font-black text-white flex items-center gap-2">
-          <FileAudio className="w-4 h-4 text-emerald-400" />
-          Clean Recordings ({recordings.length})
-        </h3>
-        <span className="text-[11px] font-bold text-zinc-500 uppercase tracking-wider">
-          Saved On Device
-        </span>
-      </div>
-
-      {recordings.length === 0 ? (
-        <div className="text-center py-10 px-4 rounded-3xl bg-zinc-900/40 border border-zinc-800/80">
-          <div className="w-12 h-12 mx-auto mb-3 rounded-2xl bg-zinc-800/80 border border-zinc-700/50 flex items-center justify-center text-zinc-500">
-            <Sparkles className="w-6 h-6" />
-          </div>
-          <p className="text-sm font-black text-zinc-300">No recordings yet</p>
-          <p className="text-xs text-zinc-500 mt-1 max-w-xs mx-auto">
-            Tap the red record button above to capture crystal clear voice audio with ambient background noise removed.
-          </p>
-        </div>
-      ) : (
+      {recordings.length === 0 ? null : (
         <div className="space-y-3">
+          <div className="flex items-center justify-between px-1">
+            <h3 className="text-base font-black text-white flex items-center gap-2">
+              <FileAudio className="w-4 h-4 text-emerald-400" />
+              Clean Recordings ({recordings.length})
+            </h3>
+            <span className="text-[11px] font-bold text-zinc-500 uppercase tracking-wider">
+              Saved On Device
+            </span>
+          </div>
           {recordings.map((rec) => {
             const isActive = activeRecordingId === rec.id;
 

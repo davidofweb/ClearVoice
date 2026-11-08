@@ -15,6 +15,7 @@
     <!-- PWA & Mobile Web App Meta -->
     <link rel="manifest" href="/manifest.json" />
     <meta name="theme-color" content="#09090b" />
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#09090b" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -47,14 +48,5 @@
   <body class="bg-zinc-950 text-zinc-100 min-h-screen overflow-x-hidden selection:bg-red-500/30 selection:text-white">
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
-    <script>
-      // Register service worker for offline & PWA installability
-      if ('serviceWorker' in navigator) {
-        window.addEventListener('load', () => {
-          navigator.serviceWorker.register('/service-worker.js')
-            .catch(() => {});
-        });
-      }
-    </script>
   </body>
 </html>
