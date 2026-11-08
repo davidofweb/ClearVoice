@@ -1,15 +1,19 @@
 {
-  "id": "/",
+  "id": "/?source=pwa",
   "name": "ClearVoice Recorder",
   "short_name": "ClearVoice",
-  "description": "Studio noise-canceling voice recorder that isolates human voices and removes background noise.",
+  "theme_color": "#09090b",
+  "background_color": "#09090b",
+  "description": "Professional noise-canceling voice recorder that isolates human voices within 1 meter and eliminates fan hum, AC rumble, generator drone, and street traffic. Works 100% offline with zero cloud latency, real-time room calibration, 4-speaker proximity tracking, and studio 16-bit PCM WAV export.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
+  "display_override": ["window-controls-overlay", "standalone", "minimal-ui"],
   "orientation": "portrait",
-  "theme_color": "#09090b",
-  "background_color": "#09090b",
-  "categories": ["utilities", "productivity"],
+  "dir": "ltr",
+  "lang": "en",
+  "prefer_related_applications": false,
+  "categories": ["utilities", "productivity", "music"],
   "icons": [
     {
       "src": "/pwa-192x192.png",
@@ -34,6 +38,34 @@
       "sizes": "512x512",
       "type": "image/svg+xml",
       "purpose": "any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Record Clean Voice",
+      "short_name": "Record",
+      "description": "Immediately start recording with real-time background noise cancellation",
+      "url": "/",
+      "icons": [
+        {
+          "src": "/pwa-192x192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Meeting Mode (4 People)",
+      "short_name": "Meeting",
+      "description": "Record discussions with automatic 4-voice proximity tracking and room gating",
+      "url": "/",
+      "icons": [
+        {
+          "src": "/pwa-192x192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
     }
   ]
 }

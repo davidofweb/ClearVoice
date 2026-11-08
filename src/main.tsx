@@ -1,17 +1,19 @@
 import { createRoot } from 'react-dom/client';
 import App from './App.tsx';
 import './index.css';
-import { registerSW } from 'virtual:pwa-register';
 
-// Register Service Worker with autoUpdate
-registerSW({
-  immediate: true,
-  onNeedRefresh() {
-    console.log('New ClearVoice version available');
-  },
-  onOfflineReady() {
-    console.log('ClearVoice is ready to work offline');
-  },
-});
+// Register Service Worker safely for offline caching and PWA installation
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker
+      .register('/service-worker.js', { scope: '/' })
+      .then((reg) => {
+        console.log('ClearVoice Service Worker active:', reg.scope);
+      })
+      .catch((err) => {
+        console.warn('Service Worker registration skipped:', err);
+      });
+  });
+}
 
 createRoot(document.getElementById('root')!).render(<App />);
